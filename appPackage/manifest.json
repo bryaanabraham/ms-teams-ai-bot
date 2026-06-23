@@ -1,0 +1,65 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.27/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.27",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+      "name": "86400",
+      "websiteUrl": "https://86400.in/",
+      "privacyUrl": "https://86400.in/PrivacyPolicy",
+      "termsOfUseUrl": "https://86400.in/termofuse"
+    },
+    "icons": {
+      "color": "BrowsEZ_192.png",
+      "outline": "BrowsEZ_32.jpg"
+    },
+    "name": {
+        "short": "BrowsEZ",
+        "full": "BrowsEZ: Your AI teammate"
+    },
+    "description": {
+        "short": "Your AI teammate for tools and enterprise queries.",
+        "full": "BrowsEZ acts like a digital teammate inside Microsoft Teams, allowing users to execute tools, retrieve enterprise data, and trigger workflows through simple conversation. Designed to integrate with your existing cloud or on-prem infrastructure, Browsez provides intelligent responses without requiring any change to your current environment."
+    },
+    "accentColor": "#FFFFFF",
+    "supportsChannelFeatures": "tier1",
+    "bots": [
+        {
+        "botId": "${{BOT_ID}}",
+        "scopes": ["personal", "team", "groupChat"],
+        "isNotificationOnly": false,
+        "supportsCalling": false,
+        "supportsVideo": false,
+        "supportsFiles": false,
+        "commandLists": [
+                {
+                  "scopes": ["personal", "team", "groupChat"],
+                  "commands": [
+                      {
+                          "title": "Hi",
+                          "description": "Say hi to the bot."
+                      }
+                  ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [
+        {
+        "entityId": "brows-ez-personal-tab",
+        "name": "Playground",
+        "contentUrl": "https://brows-ez-client.vercel.app",
+        "websiteUrl": "https://brows-ez-client.vercel.app",
+        "scopes": ["personal"]
+      }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+      "brows-ez-client.vercel.app"
+    ]
+}
